@@ -1,4 +1,4 @@
-# Chicaco Active employees dataset Study
+# Chicago Active employees dataset Study
 
 Explanation and Key Steps:
 
@@ -8,25 +8,24 @@ Explanation and Key Steps:
 
 * Initial Data Exploration:
 
-** df.info(): Data types, non-null counts.
+ * df.info(): Data types, non-null counts.
 
-** df.head(): First few rows.
+ * df.head(): First few rows.
 
-** df.describe(): Statistical summary for numerical and object columns.
+ * df.describe(): Statistical summary for numerical and object columns.
 
-** df.isnull().sum(): Counts missing values per column.
-
+ * df.isnull().sum(): Counts missing values per column.
 * Data Cleaning and Preprocessing:
-** Column Names: Standardized to lowercase with underscores.
-*** annual_salary: This is crucial. It's often an object type due to $ and commas. It's converted to a float. If not present, an attempt is made to calculate it from hourly_rate and typical_hours.
+ * Column Names: Standardized to lowercase with underscores.
+ * annual_salary: This is crucial. It's often an object type due to $ and commas. It's converted to a float. If not present, an attempt is made to calculate it from hourly_rate and typical_hours.
 
-** Drop NaNs/Zeros: Rows with no valid entries annual_salary are dropped as it's central to the analysis.
+* Drop NaNs/Zeros: Rows with no valid entries annual_salary are dropped as it's central to the analysis.
 
 * EDA - Visualizations:
-** Salary Distribution: Histogram and Boxplot to see its spread, skewness, and outliers.
-** Categorical Distributions: Countplots for full_or_part-time, salary_or_hourly.
-** Top Departments: Bar chart of departments with the most employees.
-** Salary by Employment Type/Department: Boxplots to see how salary varies across these categories.
+ * Salary Distribution: Histogram and Boxplot to see its spread, skewness, and outliers.
+ * Categorical Distributions: Countplots for full_or_part-time, salary_or_hourly.
+  * Top Departments: Bar chart of departments with the most employees.
+  * Salary by Employment Type/Department: Boxplots to see how salary varies across these categories.
 
 * Feature Engineering:
 ** For Clustering:
