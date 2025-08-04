@@ -115,7 +115,6 @@ After setup, simply run the notebook cells in order. The analysis will:
 3. Generate comprehensive visualizations
 4. Perform clustering analysis
 5. Train and evaluate ML models
-6. Save processed data as `chicago_dataset_cleaned.csv`
 
 ## Contributing
 
