@@ -57,9 +57,12 @@ jupyter notebook notebook.ipynb
 ## Data Source
 
 The project analyzes the Chicago Active Employee dataset, which is automatically downloaded from:
-- **Source**: City of Chicago Data Portal
-- **Dataset**: Current Employee Names, Salaries, and Position Titles
+- **Source**: [City of Chicago Data Portal](https://data.cityofchicago.org/)
+- **Dataset**: [Current Employee Names, Salaries, and Position Titles](https://data.cityofchicago.org/Administration-Finance/Current-Employee-Names-Salaries-and-Position-Titles/xzkq-xp2w)
+- **Direct Link**: https://data.cityofchicago.org/Administration-Finance/Current-Employee-Names-Salaries-and-Position-Titles/xzkq-xp2w
 - **Format**: Excel (.xlsx)
+- **Update Frequency**: Updated quarterly
+- **License**: Public Domain
 
 ## Key Analysis Sections
 
@@ -114,26 +117,6 @@ After setup, simply run the notebook cells in order. The analysis will:
 5. Train and evaluate ML models
 6. Save processed data as `chicago_dataset_cleaned.csv`
 
-## Development
-
-### Code Style
-The project uses Black for code formatting:
-```bash
-black .
-```
-
-### Linting
-Use flake8 for code linting:
-```bash
-flake8 .
-```
-
-### Testing
-Run tests with pytest:
-```bash
-pytest
-```
-
 ## Contributing
 
 1. Fork the repository
@@ -145,3 +128,4 @@ pytest
 ## License
 
 This project is for educational and research purposes. The Chicago employee data is publicly available through the City of Chicago Data Portal.
+
