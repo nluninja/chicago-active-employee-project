@@ -1,43 +1,147 @@
-# Chicago Active employees dataset Study
+# Chicago Active Employee Project
 
-Explanation and Key Steps:
+A comprehensive data analysis project examining the Chicago Active Employee dataset with advanced gender detection, clustering analysis, and predictive modeling.
 
-* Import Libraries: Standard data science stack.
+## Features
 
-* Load Data: Reads the CSV. Includes a try-except for FileNotFoundError.
+- **Enhanced Gender Detection**: Uses comprehensive name lists for improved gender classification
+- **Exploratory Data Analysis**: Statistical summaries and visualizations
+- **K-Means Clustering**: Employee segmentation based on salary and gender
+- **Machine Learning Models**: 
+  - Gender prediction using job characteristics
+  - High earner classification with 90%+ accuracy
 
-* Initial Data Exploration:
+## Project Structure
 
- * df.info(): Data types, non-null counts.
+```
+chicago-active-employee-project/
+├── notebook.ipynb          # Main analysis notebook (refactored)
+├── requirements.txt        # Python dependencies
+├── .gitignore             # Git ignore rules
+├── README.md              # This file
+├── venv/                  # Virtual environment
+└── data/                  # Data files (created during analysis)
+```
 
- * df.head(): First few rows.
+## Setup Instructions
 
- * df.describe(): Statistical summary for numerical and object columns.
+### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd chicago-active-employee-project
+```
 
- * df.isnull().sum(): Counts missing values per column.
-* Data Cleaning and Preprocessing:
- * Column Names: Standardized to lowercase with underscores.
- * annual_salary: This is crucial. It's often an object type due to $ and commas. It's converted to a float. If not present, an attempt is made to calculate it from hourly_rate and typical_hours.
+### 2. Create and Activate Virtual Environment
+```bash
+# Create virtual environment
+python3 -m venv venv
 
-* Drop NaNs/Zeros: Rows with no valid entries annual_salary are dropped as it's central to the analysis.
+# Activate virtual environment
+# On Linux/Mac:
+source venv/bin/activate
+# On Windows:
+# venv\Scripts\activate
+```
 
-* EDA - Visualizations:
- * Salary Distribution: Histogram and Boxplot to see its spread, skewness, and outliers.
- * Categorical Distributions: Countplots for full_or_part-time, salary_or_hourly.
-  * Top Departments: Bar chart of departments with the most employees.
-  * Salary by Employment Type/Department: Boxplots to see how salary varies across these categories.
+### 3. Install Dependencies
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
 
-* Feature Engineering:
-** For Clustering:
-*** Features: annual_salary and sex_encoded are selected.
-*** Scaling: StandardScaler is used because K-Means is distance-based.
+### 4. Launch Jupyter Notebook
+```bash
+jupyter notebook notebook.ipynb
+```
 
-* Clustering (K-Means):
-** Optimal K: Elbow Method (inertia vs. K) and Silhouette Score are used to help choose the number of clusters (k).
+## Data Source
 
-* Model Training: K-Means is fitted with the chosen k.
-  * Cluster Assignment: Cluster labels are added back to the DataFrame.
+The project analyzes the Chicago Active Employee dataset, which is automatically downloaded from:
+- **Source**: City of Chicago Data Portal
+- **Dataset**: Current Employee Names, Salaries, and Position Titles
+- **Format**: Excel (.xlsx)
 
-Analysis: Mean annual_salary and sex_encoded are calculated for each cluster.
+## Key Analysis Sections
 
-Visualization: A scatter plot (if 2D) or strip/violin plot (if 1D) shows the clusters.
+1. **Data Loading & Preprocessing**
+   - Automated data loading and cleaning
+   - Column normalization and missing value handling
+
+2. **Gender Detection Enhancement** 
+   - Custom name-based gender classification
+   - Uses comprehensive male/female/neutral name lists
+
+3. **Exploratory Data Analysis**
+   - Gender and employment distribution analysis
+   - Salary analysis across departments and job types
+   - Statistical summaries and visualizations
+
+4. **Feature Engineering & Clustering**
+   - K-means clustering with optimal K selection
+   - Employee segmentation analysis
+   - Cluster characteristic evaluation
+
+5. **Machine Learning Models**
+   - Gender prediction model (multinomial classification)
+   - High earner prediction model (binary classification)
+   - Model evaluation with ROC curves and confusion matrices
+
+## Key Findings
+
+- **Workforce Composition**: Clear gender imbalance in municipal workforce
+- **Salary Patterns**: Strong correlation between departments, job titles, and compensation
+- **Predictive Accuracy**: High earner prediction achieves >90% accuracy
+- **Data Quality**: Successfully processed ~30,857 employee records
+
+## Technical Stack
+
+- **Python 3.12+**
+- **Data Processing**: pandas, numpy
+- **Visualization**: matplotlib, seaborn  
+- **Machine Learning**: scikit-learn
+- **File Handling**: openpyxl
+- **Gender Detection**: gender-guesser + custom name lists
+- **Development**: jupyter, black, flake8, pytest
+
+## Usage
+
+After setup, simply run the notebook cells in order. The analysis will:
+
+1. Download the latest Chicago employee data
+2. Process and clean the dataset
+3. Generate comprehensive visualizations
+4. Perform clustering analysis
+5. Train and evaluate ML models
+6. Save processed data as `chicago_dataset_cleaned.csv`
+
+## Development
+
+### Code Style
+The project uses Black for code formatting:
+```bash
+black .
+```
+
+### Linting
+Use flake8 for code linting:
+```bash
+flake8 .
+```
+
+### Testing
+Run tests with pytest:
+```bash
+pytest
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting
+5. Submit a pull request
+
+## License
+
+This project is for educational and research purposes. The Chicago employee data is publicly available through the City of Chicago Data Portal.
