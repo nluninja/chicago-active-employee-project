@@ -127,5 +127,8 @@ After setup, simply run the notebook cells in order. The analysis will:
 
 ## License
 
-This project is for educational and research purposes. The Chicago employee data is publicly available through the City of Chicago Data Portal.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### Data License
+The Chicago employee data is publicly available through the City of Chicago Data Portal under the Public Domain license.
 
